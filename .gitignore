@@ -1,2 +1,7 @@
 default_folder.txt
 likes.txt
+__pycache__
+build
+dist
+icon.ico
+player.spec

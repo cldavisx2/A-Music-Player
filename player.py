@@ -43,6 +43,9 @@ def get_default_folder():
 def select_default_folder():
 	#ask user to select their music folder
 	default_path =  filedialog.askdirectory(title="Please Choose a Default Music Folder")
+	#make sure the file path is not empty
+	if default_path == '':
+		default_path = 'C:/'
 	#update txt and set the file_path
 	with open('default_folder.txt','w') as file:
 		file.write(default_path)
@@ -485,7 +488,7 @@ def exit_program():
 	#closes the program only after canceling the time to prevent memory leaks
 	global timer
 	timer.cancel()
-	quit()
+	root.destroy()
 
 def setMouseLocation(e):
 	#set the mouse position so the draggin looks nice and not jumpy
